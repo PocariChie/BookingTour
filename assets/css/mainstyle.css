@@ -24,7 +24,6 @@ html {
     top: 0;
     left: 0;
     right: 0;
-    /* làm cho thẻ chứa nó nổi lên hoặc chìm xuống */
     z-index: 1;
 }
 
@@ -137,16 +136,13 @@ html {
     text-align: center;
     font-size: 15px;
     margin-top: 25px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
 }
 
 .about-content{
     margin-top: 25px;
     font-size: 15px;
-    /* text-align: justify; căn đều 2 bên */
     text-align: justify;
     line-height: 1.4;
 }
@@ -259,9 +255,7 @@ html {
 .ticket-sub-heading {
     font-size: 15px;
     margin: 15px 0;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
 }
 
@@ -601,9 +595,7 @@ html {
 .msignuptext {
     text-align: center;
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
@@ -646,9 +638,7 @@ html {
 .mlogintext {
     text-align: center;
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
@@ -656,8 +646,6 @@ html {
 
 .mshowpasswordtext {
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
-     /*opacity độ mờ  */
     margin: 16px 0px 0px 0px;
 }
 
