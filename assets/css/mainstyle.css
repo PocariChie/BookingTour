@@ -38,6 +38,7 @@ html {
     line-height: 46px;
     display: block;
     color: #fff;
+    transition: background linear 0.25s, color linear 0.25s;
 }
 
 .subuser li a {
