@@ -191,6 +191,19 @@ html {
     border-radius: 5px;
 }
 
+/* styling for icon color */
+.ti-youtube:hover, .ti-pinterest:hover {
+    color: rgb(255,55,55);
+}
+
+.ti-facebook:hover, .ti-twitter:hover {
+    color: rgb(55,85,255);
+}
+
+.ti-instagram:hover {
+    color: rgb(224, 172, 75);
+}
+
 .tickets {
     display: flex;
     justify-content: center;
@@ -356,8 +369,10 @@ html {
 
 .social {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
+    width: 25%;
+    margin: auto;
 }
 
 .social > a {
