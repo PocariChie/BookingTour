@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        #box {
+            margin: auto;
+            width: 300px;
+            background-color: grey;
+            padding: 30px 40px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Form dang nhap-->
+    <div id="box">
+        <form action="login.php" method="post">
+            Login<br><br>
+            <input type="text" placeholder="Input your username" name="username"><br><br>
+            <input type="password" id="password" placeholder="Input your password" name="password"><br><br>
+            <span id="alert"></span>
+            <input type="checkbox"  onclick="ShowPassword()">Show password <br><br>
+            <button>Login</button><br><br>
+            <span>Need an account? </span><a href="sign_up.php">Signup</a>
+        </form>
+    </div>
+
+    
+    <?php
+    session_start();
+
+    include 'connect.php';
+    include 'function.php';
+
+    //Neu co thu gi do duoc post len
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $uname = $_POST['username'];
+        $passwd = $_POST['password'];
+
+        //read to database
+        if (!empty($uname) && !empty($passwd)) {
+            //Lay mat khau da duoc ma hoa trong csdl va luu vao bien StoredHashPassword
+            $GetPass = "select passwd from user_account where user_name = '$uname' limit 1";
+            $check_passwd = mysqli_query($conn, $GetPass);
+            if($check_passwd && mysqli_num_rows($check_passwd) > 0) {
+                $HashPass = mysqli_fetch_assoc($check_passwd);
+                $StoredHashPassword = $HashPass['passwd'];
+            }
+
+            $query = "select * from user_account where user_name = '$uname' limit 1";
+            $result = mysqli_query($conn, $query);
+            
+
+            if($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                //Kiem tra xem mat khau nhap vao co giong mat khau da duoc ma hoa khong
+                if(password_verify($passwd, $StoredHashPassword)) {
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    header('Location: index.php');
+                    die;
+                } else {
+                    echo "<script>document.getElementById('alert').innerHTML = 'Wrong password.<br><br>'</script>";
+                }
+            } else {
+                echo "<script>document.getElementById('alert').innerHTML = 'Wrong username or password.<br><br>'</script>";
+            }          
+        } else {
+            echo "<script>document.getElementById('alert').innerHTML = 'Please enter valid information.<br><br>'</script>";
+        }
+    }
+?>
+
+    <script>
+        function ShowPassword() {
+            var x = document.getElementById('password')
+
+            if(x.type === 'password') {
+                x.type = 'text'
+            } else {
+                x.type = 'password'
+            }
+        }
+    </script>
+
+
+</body>
+</html>

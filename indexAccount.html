@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maroon5</title>
+    <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/accountstyle.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-nav">
+                <ul class="nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#band">Band</a></li>
+                    <li><a href="#tour">Tour</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li  class="user" >
+                        <a href="#user">
+                            <img class="user-img" src="<?php echo $user_data['avatar']?>" alt="user_img">
+                            <?php echo $user_data['fullname'] ?>
+                        </a>
+                        <ul class="subuser">
+                            <li><a class="js-userInfor js-closechangePass">User Information</a></li>
+                            <li><a class="js-changePass js-closeuserInfor">Change Password</a></li>
+                            <li><a href="logout.php">Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                
+            </div>
+
+            <div class="header-img">
+                <img src="./assets/img/Maroon-5.jpg" alt="Maroon5">
+            </div>
+        </div>
+        
+        <div class="content">
+            <div id="band" class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading">We love music</p>
+                <p class="about-content">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="members">
+                    <div class="member">
+                        <p class="member-name">AdamLevine</p>
+                        <img src="./assets/img/AdamLevine.jpg" alt="">
+                    </div>
+                    <div class="member">
+                        <p class="member-name">JamesValentine</p>
+                        <img src="./assets/img/James Valentine.jpg" alt="">
+                    </div>
+                    <div class="member">
+                        <p class="member-name">	JesseCarmichael</p>
+                        <img src="./assets/img/Jesse Carmichael.jpg" alt="">
+                    </div>
+                    <div class="member">
+                        <p class="member-name">MattFlynn</p>
+                        <img src="./assets/img/Matt Flynn.jpg" alt="">
+                    </div>
+                    <div class="member">
+                        <p class="member-name">PJ_Morton</p>
+                        <img src="./assets/img/PJ_Morton_2011.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tour" class="tour-section">
+            <div class="content-section">
+                <h2 class="section-heading text-white">TOUR DATES</h2>
+                <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+            </div>
+            <!-- Ticket -->
+            <!-- update 4/15  -->
+            <div class="tickets">
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Hokaido.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Hokaido</h3>
+                        <p class="ticket-sub-heading">Fri 27 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick=show() class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Tokyo.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Tokyo</h3>
+                        <p class="ticket-sub-heading">Sat 28 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Okinawa.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Okinawa</h3>
+                        <p class="ticket-sub-heading">Sun 29 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Hokaido.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Hokaido</h3>
+                        <p class="ticket-sub-heading">Fri 27 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Tokyo.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Tokyo</h3>
+                        <p class="ticket-sub-heading">Sat 28 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Okinawa.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Okinawa</h3>
+                        <p class="ticket-sub-heading">Sun 29 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Tokyo.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Tokyo</h3>
+                        <p class="ticket-sub-heading">Sat 28 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+                <div class="buy-ticket item">
+                    <img src="./assets/img/Okinawa.jpg" alt="" class="ticket-img">
+                    <div class="ticket-information">
+                        <h3 class="ticket-heading">Okinawa</h3>
+                        <p class="ticket-sub-heading">Sun 29 Nov 2016</p>
+                        <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contact" class="content-section">
+            <h2 class="section-heading">CONTACT</h2>
+            <p class="section-sub-heading">Fan? Drop a note!</p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="ti-location-pin"></i>Tokyo, Japan</p>
+                    <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p> 
+                </div>
+                <div class="contact-form">
+                    <form action="">
+                        <div class="col">
+                            <div class="row">
+                                <input type="text" name="" id="" placeholder="Name" required class="form-control">
+                            </div>
+                            <div class="row">
+                                <input type="email" name="" id="" placeholder="Email" required class="form-control">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <input type="text" name="" id="" placeholder="Message" required class="form-control">
+                            </div>  
+                        </div>
+                        <input class="btn" type="submit" value="SEND">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <img src="./assets/img/map.jpg" alt="Map">
+        </div>
+
+        <div class="footer">
+            <div class="social">
+                <a href="https://www.facebook.com/maroon5/"><i class="ti-facebook" ></i></a>
+                <a href="https://www.instagram.com/maroon5/?hl=en"><i class="ti-instagram" ></i></a>
+                <a href="https://www.youtube.com/channel/UCBVjMGOIkavEAhyqpxJ73Dw"><i class="ti-youtube" ></i></a>
+                <a href="https://www.pinterest.com/OfficialMaroon5/"><i class="ti-pinterest" ></i></a>
+                <a href="https://twitter.com/maroon5?lang=en"><i class="ti-twitter" ></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="">Maroon5</a></p>
+        </div>
+    </div>
+
+    <!-- BUY TICKET -->
+    <!-- update 4/15  -->
+    <div id="js_ticket" style="display:none" class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-header">
+                <div onclick="document.getElementById('js_ticket').style.display='none'" class="modal-close-btn js-modal-close">
+                    <i class="ti-close"></i>
+                </div>
+                <header class="modal-title">
+                    <i class="ti-bag"></i>
+                    Tickets
+                </header>
+            </div>
+
+            <div class="modal-body">
+                <label for="" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" class="modal-inpul" placeholder="How many?">
+
+                <label for="" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input type="text" class="modal-inpul" placeholder="Enter email">
+                
+                <div onclick="document.getElementById('js_ticket').style.display='none'">
+                    <div onclick="document.getElementById('js_confirm').style.display='flex'" class="modal-pay-btn">
+                        PAY
+                        <i class="ti-check"></i>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div class="modal-footer">
+                <div class="modal-help">
+                    Need <a href="">help?</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- update 4/15  -->
+    <!-- BUY TICKET CONFIRM -->
+    <div id="js_confirm" style="display:none" class="modalconfirm">
+        <div class="main-modal-confirm">
+            <div class="mheader mheader-confirm mrow">
+                <div onclick="document.getElementById('js_confirm').style.display='none'" class="mclosebtn">
+                    <i class="ti-close"></i>
+                </div>
+                <header class="modal-title-confirm">
+                    Confirm Information
+                </header>
+            </div>
+
+            <div class="mcontent mrow">
+                <form action="indexAccount.php" method="post">
+                    <div class="mtext">
+                        <p>User Name</p> <p><?php echo "<p>".$user_data['user_id']."</p>" ?></p>
+                    </div>
+                    <div class="mtext">
+                        <p>Quantity</p> <p><?php echo "<p>".$user_data['user_id']."</p>" ?></p>
+                    </div>
+                    <div class="mtext">
+                        <p>Total</p> <p><?php echo "<p>".$user_data['user_id']."</p>" ?></p>
+                    </div>
+                    <div class="mtext">
+                        <input class="btn" type="submit" value="CONFIRM">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function show() {
+            document.getElementById('js_ticket').style.display='flex'
+        }  
+        
+    </script>
+
+    <!-- User Information -->
+    <div class="modaluserInfor js-userInfor-modal">
+        <div class="main-modal-userInfor js-mainmodal">
+            <div class="mheader mrow">
+                <div class="mclosebtn js-mclose">
+                    <i class="ti-close"></i>
+                </div>
+                <!-- <center><img src="./assets/img/IconMaroon5.jpg" alt="Icon"></center> -->
+                <center><?php echo "<img src='".$user_data['avatar']."' width='100px' height='100px' style='border-radius: 50%; border: 1px solid black;'>" ?></center>
+                <header class="modal-title-userInfor">
+                    Information
+                </header>
+            </div>
+    
+            <div class="mcontent mrow">
+                <form action="indexAccount.php" method="post">
+                        <div class="mtext">
+                            <p>ID</p> <p><?php echo "<p>".$user_data['user_id']."</p>" ?></p>
+                        </div>
+                        <div class="mtext">
+                            <p>Account</p>
+                            <p><input type="text" value="<?php echo $user_data['user_name']; ?>" readonly class="form-control"></p>                        
+                        </div>
+                        <div class="mtext">
+                            <p>Date Join</p>
+                            <p><?php echo "<p>".$user_data['date_signup']."</p>" ?></p>                        
+                        </div>
+                        <div class="mtext">
+                            <p>Name</p>
+                            <p><input type="text" name="fullname" placeholder="Họ và Tên" value="<?php echo $user_data['fullname'] ?>" class="form-control"></p>                        
+                        </div>
+                        <div class="mtext">
+                            <p>Phone Number (10 Character)</p>
+                            <p><input type="text" pattern="[0-9]{10}" name="phone" value="<?php echo $user_data['phone_number'] ?>" class="form-control"></p>
+                        </div>
+                        <div class="mtext">
+                            <p>Sex</p>
+                            <p><select name="sex" id="sex" class="form-control">
+                                <option value="Nam" <?php if($user_data['sex'] == 'Nam') {echo "selected";} ?>>Nam</option>
+                                <option value="Nữ" <?php if($user_data['sex'] == 'Nữ') {echo "selected";} ?>>Nữ</option>
+                                <option value="Không xác định" <?php if($user_data['sex'] == 'Không xác định') {echo "selected";} ?>>Không xác định</option>
+                            </select></p>   
+                        </div>
+                        <div class="mtext">
+                            <p>Avatar</p>
+                            <p><input type="file" name="avatar"></p>
+                        </div>
+                        <div class="mtext">
+                            <input class="btn" type="submit" value="Update">
+                        </div>
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        const userBtn = document.querySelector('.js-userInfor')
+        const mclose = document.querySelector('.js-mclose')
+        const mainmodal = document.querySelector('.js-mainmodal')
+        const modaluserInfor = document.querySelector('.js-userInfor-modal')
+        const closeuserInfor = document.querySelector('.js-closeuserInfor')
+
+        function showuser () {  
+            modaluserInfor.classList.add('open') 
+        }
+
+        function hideuser () {
+            modaluserInfor.classList.remove('open')
+        }
+
+        userBtn.addEventListener('click', showuser)
+        mclose.addEventListener('click', hideuser)
+        modaluserInfor.addEventListener('click', hideuser)
+        // Stop hideuser in mainmodal
+        mainmodal.addEventListener('click', function(event){
+            event.stopPropagation()
+        })
+        closeuserInfor.addEventListener('click', hideuser)
+    </script>
+
+    <!-- Change Password -->
+    
+    <div class="modalchangePass js-changePass-modal">
+        <div class="main-modal-changePass js-changemodal">
+            <div class="mheader mrow">
+                <div class="mclosebtn js-cclose">
+                    <i class="ti-close"></i>
+                </div>
+                <!-- <center><img src="./assets/img/IconMaroon5.jpg" alt="Icon"></center> -->
+                <center><?php echo "<img src='".$user_data['avatar']."' width='100px' height='100px' style='border-radius: 50%; border: 1px solid black;'>" ?></center>
+                <header class="modal-title-changePass">
+                    Change Password
+                </header>
+            </div>
+    
+            <div class="mcontent mrow">
+                <form action="">
+                        <div class="mtext">
+                            <input type="password" id="password" placeholder="Input your old password" name="password" class="form-control">
+                        </div>
+                        <div class="mtext">
+                            <input type="password" id="password" placeholder="Input your new password" name="password" class="form-control">
+                        </div>
+                        <div class="mtext">
+                            <input type="password" id="re_password" placeholder="Re-enter your new password" name="re-password" class="form-control">
+                        </div>
+                        <div class="mtext">
+                            <input class="btn " type="submit" value="OK">
+                        </div>
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        const changeBtn = document.querySelector('.js-changePass')
+        const cclose = document.querySelector('.js-cclose')
+        const changemodal = document.querySelector('.js-changemodal')
+        const modalchangePass = document.querySelector('.js-changePass-modal')
+        const closechangePass = document.querySelector('.js-closechangePass')
+
+        function showuser () {  
+            modalchangePass.classList.add('open') 
+        }
+
+        function hideuser () {
+            modalchangePass.classList.remove('open')
+        }
+
+        changeBtn.addEventListener('click', showuser)
+        cclose.addEventListener('click', hideuser)
+        modalchangePass.addEventListener('click', hideuser)
+        // Stop hideuser in mainmodal
+        changemodal.addEventListener('click', function(event){
+            event.stopPropagation()
+        })
+        closechangePass.addEventListener('click', hideuser)
+        
+    </script>
+</body>
+</html>

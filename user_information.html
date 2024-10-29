@@ -1,0 +1,103 @@
+<?php
+    session_start();
+
+    include 'connect.php';
+    include 'function.php';
+
+    $user_data = check_login($conn);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Information</title>
+
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<?php echo "<img src='".$user_data['avatar']."' width='100px' height='100px' style='border-radius: 50%; border: 1px solid black;'>" ?>
+
+<!--Form cap nhat thong tin nguoi dung-->
+<form action="user_information.php" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Mã tài khoản</td>
+            <td><?php echo "<p>".$user_data['user_id']."</p>" ?></td>
+        </tr>
+
+        <tr>
+            <td>Tài khoản</td>
+            <td><input type="text" value="<?php echo $user_data['user_name']; ?>" readonly></td>
+        </tr>
+
+        <tr>
+            <td>Ngày tham gia</td>
+            <td><?php echo "<p>".$user_data['date_signup']."</p>" ?></td>
+        </tr>
+
+        <tr>
+            <td>Họ tên</td>
+            <td><input type="text" name="fullname" placeholder="Họ và Tên" value="<?php echo $user_data['fullname'] ?>"></td>
+        </tr>
+
+        <tr>
+            <td>Giới tính</td>
+            <td><select name="sex" id="sex">
+                <option value="Nam" <?php if($user_data['sex'] == 'Nam') {echo "selected";} ?>>Nam</option>
+                <option value="Nữ" <?php if($user_data['sex'] == 'Nữ') {echo "selected";} ?>>Nữ</option>
+                <option value="Không xác định" <?php if($user_data['sex'] == 'Không xác định') {echo "selected";} ?>>Không xác định</option>
+            </select></td>
+        </tr>
+
+        <tr>
+            <td>Số điện thoại (10 chữ số)</td>
+            <td><input type="text" pattern="[0-9]{10}" name="phone" value="<?php echo $user_data['phone_number'] ?>"></td>
+        </tr>
+
+        <tr>
+            <td>Avatar</td>
+            <td><input type="file" name="avatar"></td>
+        </tr>
+
+    </table>
+    <button name="submit">Cập nhật</button>
+</form>
+
+<?php
+    if(isset($_POST['submit'])) {
+        $name = $_POST['fullname'];
+        $sex_option = $_POST['sex'];
+        $phone_number = $_POST['phone'];
+
+        
+        
+        $change = "update user_account set fullname = '$name', sex = '$sex_option', phone_number = '$phone_number' where user_id= ".$user_data['user_id'];
+        $update = mysqli_query($conn, $change);
+
+        $avatar = $_FILES['avatar']['name'];
+
+        //upload file
+        $target_dir = 'uploads/';
+        //basename chi de lay ten file
+        $target_file = $target_dir . basename($avatar);
+        //Kiem tra neu nhu file upload thanh cong
+        if(move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file)) {
+            $path = "update user_account set avatar = '$target_file' where user_id = ".$user_data['user_id'];
+            $update_avt = mysqli_query($conn, $path);
+        }
+        echo "<script>alert('Cập nhật thành công')</script>";
+        header("refresh: 0");
+    }
+?>
+
+
+
+</body>
+</html>

@@ -1,0 +1,652 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* common */
+.text-white{
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    position: relative;
+}
+
+.header-nav{
+    position: fixed;
+    background-color: #000;
+    height: 46px;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* làm cho thẻ chứa nó nổi lên hoặc chìm xuống */
+    z-index: 1;
+}
+
+.nav > li {
+    display: inline-block;
+}
+
+.nav li a {
+    text-decoration: none;
+    padding: 0 24px;
+    line-height: 46px;
+    display: block;
+    color: #fff;
+}
+
+.subuser li a {
+    color: #000;
+    line-height: 38px;
+    text-align: right;
+}
+
+
+.nav li:hover > a {
+    color: #000;
+    background-color: #ccc;
+}
+
+.nav li:hover .subuser{
+    display: block;
+}
+
+.user{
+    float: right;
+    padding-right: 20px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.user a {
+    text-decoration: none;
+    padding: 0 24px;
+    line-height: 46px;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.user a:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.user img{
+    float: inline-start;
+    margin-top: 8%;
+    margin-right: 8px;
+}
+.user-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.subuser {
+    display: none;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+
+.subuser li{
+    color: #000;
+    line-height: 38px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.header-img img {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.content .content-section {
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.section-heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.section-sub-heading{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 25px;
+    /* tạo kiểu cho chữ dùng font-style */
+    font-style: italic; 
+     /*opacity độ mờ  */
+    opacity: 0.6;
+}
+
+.about-content{
+    margin-top: 25px;
+    font-size: 15px;
+    /* text-align: justify; căn đều 2 bên */
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.tour-section{
+    background-color: #000;
+}
+
+.content-section h2 {
+    padding-top: 64px;
+}
+
+.members {
+    display: flex;
+    flex-direction: row;
+    margin: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.member {
+    width: calc(100% /5);
+}
+
+.member-name {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+    cursor: default;
+    transition: all linear 0.2s;
+}
+
+.member-name:hover {
+    transform: translateY(-3px);
+}
+
+.member img {
+    width: 90%;
+    display: block;
+    border-radius: 5px;
+}
+
+.tickets {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+
+}
+
+.ticket-img {
+    width: 100%;
+    display: block;
+}
+
+.buy-ticket {
+    width: 18.888%;
+    margin: 10px;
+    padding-bottom: 12px;
+    transition: all 0.2s linear;
+}
+
+.buy-ticket:hover {
+    transform: scale(1.1);
+}
+
+/* 
+.item1 {
+    margin-left: 20%;
+}
+
+.item2 {
+    margin: 5px o;
+}
+
+.item3 {
+    margin-right: 20%;
+} */
+
+.ticket-information{
+    color: #757575;
+    padding: 8px 16px;
+    font-size: 15px;
+    background-color: #fff;
+    list-style: none;
+}
+
+.ticket-heading {
+    padding-top: 15px;
+    color: #000;
+    font-weight: 550;
+}
+
+.ticket-sub-heading {
+    font-size: 15px;
+    margin: 15px 0;
+    /* tạo kiểu cho chữ dùng font-style */
+    font-style: italic; 
+     /*opacity độ mờ  */
+    opacity: 0.6;
+}
+
+.btn{
+    margin-bottom: 7px;
+    margin-top: 15px;
+    padding: 8px 16px;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+}
+
+.btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact-content {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-info a {
+    color: #2196F3;
+    opacity: 0.6;
+}
+
+.contact-info a:hover {
+    opacity: 1;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    justify-content: space-around;
+}
+
+.row {
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.map-section img {
+    width: 100%;
+    margin-top: 42px;
+}
+
+
+.footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer .social {
+    font-size: 20px;
+}
+
+.footer .social a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .copyright a:hover ,
+.footer .social a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer .copyright a {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.social > a {
+    transition: all 0.2s linear;
+}
+
+.social > a:hover {
+    transform: scale(1.2);
+}
+
+/* BUY TICKET */
+
+.modal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.modal-container {
+    background: #fff;
+    width: 600px;
+    height: fit-content;
+    animation: modalFadeIn ease .5s;
+}
+
+.modal-header {
+    position: relative;
+    background: #009688;
+    padding: 32px;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 800;
+    right: 0px;
+    top: 0px;
+    padding: 12px 16px;
+}
+
+.modal-close-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-body {
+    padding: 1px 16px;
+}
+
+.modal-label {
+    display: block;
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+.modal-inpul {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.modal-pay-btn {
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    background: #009688;
+    color: #fff;
+}
+
+.modal-pay-btn:hover {
+    background: #ccc;
+    color: #000;
+}
+
+.modal-help{
+    font-size: 15px;
+    margin: 15px;
+    float: right;
+}
+
+.modal-help a{
+    color: #2196F3;
+}
+
+/* BUY TICKET CONFIRM */
+
+.mrow {
+    margin-top: 8px;
+}
+
+
+.mheader {
+    display: block;
+    position: relative;
+}
+
+.modalconfirm {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-modal-confirm {
+    background-color: #fff;
+    border-radius: 15px;
+    
+    animation: modalFadeIn ease .5s;
+}
+
+.modal-title-confirm {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+    padding-bottom: 6px;
+    color: #000;
+    letter-spacing: 4px;
+    border-bottom-style: solid;
+    padding: 30px;
+}
+
+/* ANIMATION */
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-140px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SIGNUP */
+
+.mrow {
+    margin-top: 8px;
+}
+
+.modalsignup {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.main-modal-signup {
+    background-color: #fff;
+    border-radius: 15px;
+    
+    animation: modalFadeIn ease .5s;
+}
+
+.mheader {
+    display: block;
+    position: relative;
+}
+
+.mclosebtn {
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    margin-right: 6px;
+}
+
+.mclosebtn:hover {
+    background-color: #ccc;
+    opacity: 0.5;
+    color: #000;
+    border-radius: 4px;
+}
+
+.mheader img {
+    width: 25%; 
+    margin-top: 15%;
+    border-radius: 4px;
+}
+
+.modal-title-signup {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+    color: #000;
+    letter-spacing: 4px;
+}
+
+.modalsignup.open {
+    display: flex;
+}
+
+.mtext {
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.msignuptext {
+    text-align: center;
+    font-size: 15px;
+    /* tạo kiểu cho chữ dùng font-style */
+    font-style: italic; 
+     /*opacity độ mờ  */
+    opacity: 0.6;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+/* LOG IN */
+
+.modallogin {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-modal-login {
+    background-color: #fff;
+    border-radius: 15px;
+    animation: modalFadeIn ease .5s;
+    position: relative;
+}
+
+.modal-title-login {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0;
+    color: #000;
+    letter-spacing: 4px;
+}
+
+.modallogin.open {
+    display: flex;
+}
+
+
+.mlogintext {
+    text-align: center;
+    font-size: 15px;
+    /* tạo kiểu cho chữ dùng font-style */
+    font-style: italic; 
+     /*opacity độ mờ  */
+    opacity: 0.6;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.mshowpasswordtext {
+    font-size: 15px;
+    /* tạo kiểu cho chữ dùng font-style */
+     /*opacity độ mờ  */
+    margin: 16px 0px 0px 0px;
+}
+
+.mcheckbox {
+    padding-top: 8px;
+    position: absolute;
+    left: 0;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+
+    <style>
+        #box {
+            margin: auto;
+            width: 300px;
+            background-color: grey;
+            padding: 30px 40px;
+        }
+
+        #alert {
+            color: lightcoral;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Form dang ki-->
+    <div id="box">
+        <form action="sign_up.php" method="post">
+            Signup<br><br>
+            <input type="text" placeholder="Input your username" name="username"><br><br>
+            <input type="password" id="password" placeholder="Input your password" name="password"><br><br>
+            <input type="password" id="re_password" placeholder="Re-enter your password" name="re-password"><br><br>
+            <span id="alert"></span>
+            <button>Signup</button><br><br>
+            <span>Alredy have an account? </span><a href="login.php">Login</a>
+            <input type="hidden" name="date" id="date">
+        </form>
+    </div>
+
+    <?php
+    session_start();
+
+    include 'connect.php';
+    include 'function.php';
+
+    //something was posted
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $uname = $_POST['username'];
+        $passwd = $_POST['password'];
+        $re_passwd = $_POST['re-password'];
+        $date_signup = $_POST['date'];
+        $query1 = "select * from user_account where user_name = '$uname'";
+        $result = mysqli_query($conn, $query1);
+        
+        $HashPassword = password_hash($passwd, PASSWORD_DEFAULT);
+
+        //save to database
+        if ($result && mysqli_num_rows($result) <= 0) {
+            if ($passwd == $re_passwd && !empty($uname) && !empty($passwd) && !empty($re_passwd)) {
+                $query2 = "insert into user_account(user_name, passwd, date_signup) values('$uname', '$HashPassword', '$date_signup')";
+                mysqli_query($conn, $query2);
+                header('Location: login.php');
+                die;
+            } else {
+                echo "<script>document.getElementById('alert').innerHTML = 'Please enter valid information.<br><br>'</script>";
+            }
+        } else {
+            echo "<script>document.getElementById('alert').innerHTML = 'Username already exists.<br><br>'</script>";
+        }
+        
+    }
+?>
+
+    <script>
+            var d = new Date()
+            document.getElementById("date").value = d.getFullYear() + "/" + (d.getMonth()+1).toString().padStart(2, "0") + "/" + d.getDate()       
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!-- <?php
+    session_start();
+    include 'connect.php';
+    include 'function.php';
+    $user_data = check_login($conn);
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase History</title>
+    <style>
+
+        .header h2 {
+            margin: 80px 0 40px 0;
+        }
+
+        .nav li {
+            text-decoration: none;
+            padding: 0 24px;
+            line-height: 46px;
+            display: block;
+            color: #fff;
+        }
+
+        .btn-date {
+            padding: 8px 16px;
+            border: none;
+            margin: 0px 12px;
+            background-color: #000;
+            color: #fff;
+            border: solid #fff 2px;
+            transition: all 0.2s linear;
+        }
+
+        .btn-date:hover {
+            transform: scale(1.05,1.05);
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .btn-submit:hover {
+            color: #000;
+            background-color: #ccc;
+            cursor: pointer;
+            transform: scale(1.05,1.05);
+        }
+
+        table, th, td {
+            border: solid 2px;
+            padding: 5px;
+        }
+
+        th, td {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        
+    </style>
+    <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon"/>
+    <link rel="stylesheet" href="./assets/css/mainstyle.css">
+</head>
+<body>
+    
+    <div class="header">
+        <center>
+            <div class="header-nav">
+                <ul class="nav">
+                    <li>SINCE<input class="btn-date" type="text" pattern="\d{4}/\d{2}/\d{2}"></li>
+                    <li>TO<input class="btn-date" type="text" pattern="\d{4}/\d{2}/\d{2}"></li>
+                    <li><input class="btn-date btn-submit" type="submit" value="Search"></li>
+                    <li  class="user" >
+                        <a href="#user">
+                            BACK
+                        </a>
+                    </li>
+                </ul>
+                
+                
+            </div>
+
+            <h2 class="section-heading">Purchase History</h2>
+        </center>
+    </div>
+
+    <center>
+        <div class="search-date">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Place</th>
+                    <th>Tour Date</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Purchase Date</th>
+                </tr>
+        
+                <tr>
+                    <td>cak</td>
+                    <td>lon</td>
+                    <td>vu</td>
+                    <td>phuc chim be</td>
+                    <td>sang dep trai</td>
+                    <td>abc</td>
+                </tr>
+    
+            </table>
+        </div>
+        
+    </center>
+
+    
+    <script>
+        var curDate = new Date();
+    
+        // Ngày hiện tại
+        var curDay = curDate.getDate();
+    
+        // Tháng hiện tại
+        var curMonth = curDate.getMonth() + 1;
+    
+        // Năm hiện tại
+        var curYear = curDate.getFullYear();
+    
+        // Gán vào thẻ HTML
+        document.getElementById('current-time').innerHTML = curDay + "/" + curMonth + "/" + curYear;
+    </script>
+
+</body>
+</html>
