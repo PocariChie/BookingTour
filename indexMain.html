@@ -13,11 +13,11 @@
         <div  class="header">
             <div class="header-nav">
                 <ul class="nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    
+
                 </ul>
                 <!-- New update 4/12 -->
                 <div class="user" >
@@ -38,14 +38,14 @@
                         <li><a href="#user">Log Out</a></li>
                     </ul> -->
                 </div>
-                
+
             </div>
 
             <div class="header-img">
                 <img src="./assets/img/Maroon-5.jpg" alt="Maroon5">
             </div>
         </div>
-        
+
         <div class="content">
             <div id="band" class="content-section">
                 <h2 class="section-heading">THE BAND</h2>
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="tour" class="tour-section">
             <div class="content-section">
                 <h2 class="section-heading text-white">TOUR DATES</h2>
@@ -135,7 +135,7 @@
                 <div class="contact-info">
                     <p><i class="ti-location-pin"></i>Tokyo, Japan</p>
                     <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
-                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p> 
+                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
                 </div>
                 <div class="contact-form">
                     <form action="">
@@ -150,7 +150,7 @@
                         <div>
                             <div class="row">
                                 <input type="text" name="" id="" placeholder="Message" required class="form-control">
-                            </div>  
+                            </div>
                         </div>
                         <input class="btn" type="submit" value="SEND">
                     </form>
@@ -200,14 +200,14 @@
                     Send To
                 </label>
                 <input type="text" class="modal-inpul" placeholder="Enter email">
-                
+
                 <div onclick="document.getElementById('js_ticket').style.display='none'">
                     <div onclick="document.getElementById('js_confirm').style.display='flex'" class="modal-pay-btn">
                         PAY
                         <i class="ti-check"></i>
                     </div>
                 </div>
-                
+
 
             </div>
 
@@ -254,7 +254,7 @@
                     Join With Us
                 </header>
             </div>
-    
+
             <div class="mcontent mrow">
                 <form action="">
                         <div class="mtext">
@@ -274,17 +274,17 @@
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
                 <p onclick="document.getElementById('js_signup').style.display='none'"
-                class="msignuptext ">Alredy have an account? 
+                class="msignuptext ">Alredy have an account?
                     <a style="color: #34a853;" onclick="document.getElementById('js_login').style.display='flex'" class="js-loginf js-hideSUF">
                         LogIn
                     </a>
                 </p>
             </div>
         </div>
-        
+
     </div>
 
-    
+
 
     <!-- LOG IN -->
     <!-- New update 4/12 -->
@@ -299,7 +299,7 @@
                     Welcome Back
                 </header>
             </div>
-    
+
             <div class="mcontent mrow">
                 <form action="">
                         <div class="mtext">
@@ -322,11 +322,11 @@
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
                 <p onclick="document.getElementById('js_login').style.display='none'"
-                class="mlogintext">Alredy have an account? 
+                class="mlogintext">Alredy have an account?
                 <a style="color: #34a853;" onclick="document.getElementById('js_signup').style.display='flex'">SignUp</a></p>
             </div>
         </div>
-        
+
     </div>
 
     <script>
@@ -340,11 +340,29 @@
 
     <script>
         const mainmodal = document.querySelector('.js-mainmodal')
-        
+
         mainmodal.addEventListener('click', function(event){
             event.stopPropagation()
         })
-        
+
+    </script>
+
+    <script> //This script controls the dynamic behavior of the nav links underline styling.
+        //Get all nav links
+        const navLinks = document.querySelectorAll('.nav li a');
+
+        //Adding click event listener to each link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event){
+                //event.preventDefault();
+
+            //Removing 'active' class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            //Adding 'active' class only to the clicked link as being active
+            this.classList.add('active');
+            });
+        });
     </script>
 
 </body>

@@ -38,6 +38,23 @@ html {
     display: block;
     color: #fff;
     transition: background linear 0.25s, color linear 0.25s;
+    position: relative;
+}
+/* Setting the width of the underline for the active link*/
+.nav li a.active:after{
+    width: 100%;
+}
+
+/* Style for the underline effect on links */
+.nav li a:after{
+    content:'';
+    position:absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.25s ease-in-out;
 }
 
 .subuser li a {
@@ -136,7 +153,7 @@ html {
     text-align: center;
     font-size: 15px;
     margin-top: 25px;
-    font-style: italic; 
+    font-style: italic;
     opacity: 0.6;
 }
 
@@ -225,7 +242,7 @@ html {
     transform: scale(1.1);
 }
 
-/* 
+/*
 .item1 {
     margin-left: 20%;
 }
@@ -255,7 +272,7 @@ html {
 .ticket-sub-heading {
     font-size: 15px;
     margin: 15px 0;
-    font-style: italic; 
+    font-style: italic;
     opacity: 0.6;
 }
 
@@ -496,7 +513,7 @@ html {
 .main-modal-confirm {
     background-color: #fff;
     border-radius: 15px;
-    
+
     animation: modalFadeIn ease .5s;
 }
 
@@ -546,7 +563,7 @@ html {
 .main-modal-signup {
     background-color: #fff;
     border-radius: 15px;
-    
+
     animation: modalFadeIn ease .5s;
 }
 
@@ -570,7 +587,7 @@ html {
 }
 
 .mheader img {
-    width: 25%; 
+    width: 25%;
     margin-top: 15%;
     border-radius: 4px;
 }
@@ -595,7 +612,7 @@ html {
 .msignuptext {
     text-align: center;
     font-size: 15px;
-    font-style: italic; 
+    font-style: italic;
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
@@ -638,7 +655,7 @@ html {
 .mlogintext {
     text-align: center;
     font-size: 15px;
-    font-style: italic; 
+    font-style: italic;
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
