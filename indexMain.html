@@ -8,37 +8,49 @@
     <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/mainstyle.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 
 <body>
     <div class="main">
         <div class="header">
+            <!-- Main navigation with Home link always visible -->
             <div class="header-nav">
                 <ul class="nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li> <!-- Home link is outside the dropdown menu -->
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
-
                 </ul>
-                <!-- New update 4/12 -->
+        
                 <div class="user">
-                    <!-- I created a function based on what you did -->
                     <div onclick="document.getElementById('js_confirm').style.display='none'">
                         <a onclick="toggleLogIn()" class="js-login js-closesignup">LogIn</a>
                     </div>
                     <div onclick="document.getElementById('js_login').style.display='none'">
                         <a onclick="toggleSignUp()" class="js-signup js-closelogin">SignUp</a>
                     </div>
-                    <!-- Account part -->
-                    <!-- <ul class="subuser">
-                        <li><a class="js-signup">Sign Up</a></li>
-                        <li><a href="#user">Log Out</a></li>
-                    </ul> -->
                 </div>
-
             </div>
-
+        
+            <!-- Mobile menu icon for dropdown toggle -->
+             <div class="header-mobile">
+                <div class="nav">
+                    <li><a href="#">Home</a></li>
+                </div>
+                <div id="mobile-menu" class="mobile-menu" onclick="toggleMenu()">
+                    <i class="ti-menu"></i>
+                </div>
+                <!-- Mobile dropdown menu for other links (excluding Home) -->
+                <ul id="dropdown-menu" class="nav-dropdown">
+                    <li><a href="#band">Band</a></li>
+                    <li><a href="#tour">Tour</a></li>
+                    <li><a href="#contact" style="border-bottom: 1px solid #e0e0e0;">Contact</a></li>
+                    <li><a onclick="toggleLogIn()" class="js-login">LogIn</a></li>
+                    <li><a onclick="toggleSignUp()" class="js-signup">SignUp</a></li>
+                </ul>
+             </div>
+            
             <div class="header-img">
                 <img src="./assets/img/Maroon-5.jpg" alt="Maroon5">
             </div>
@@ -378,6 +390,20 @@
         }
     </script>
 
+    <script>
+        function toggleMenu() {
+                const dropdownMenu = document.getElementById("dropdown-menu");
+                dropdownMenu.classList.toggle("show");
+            }
+
+            // Optional: Close the dropdown if a link inside it is clicked
+            document.querySelectorAll('#dropdown-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const dropdownMenu = document.getElementById("dropdown-menu");
+                    dropdownMenu.classList.remove("show");
+                });
+            });
+    </script>
 </body>
 
 </html>
