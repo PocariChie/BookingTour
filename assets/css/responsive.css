@@ -95,4 +95,16 @@
         background-color: #f5f5f5; /* Light gray for hover */
         color: #000;
     }
+
+
+    .members {
+        display: flex;
+        flex-wrap: wrap; /* Cho phép các phần tử xuống hàng khi hết chỗ */
+        justify-content: center;
+    }
+
+    .member {
+        width: 27%; /* Đặt chiều rộng cho mỗi member là 30% */
+        margin: 10px; /* Khoảng cách giữa các member */
+    }
 }
