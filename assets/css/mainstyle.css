@@ -19,34 +19,12 @@ html {
 
 .header-nav{
     position: fixed;
-    /* change the font family & size of the navbar objects */
-    font-family: "Bona Nova SC", serif;
-    font-size: 25px;
-    background-color: #fffdfd00;
-    height: 50px;
+    background-color: #000;
+    height: 46px;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
-}
-
-/* Here is a new CSS class */
-.header-nav.scrolled {
-    /* background-color: rgba(255,255,255,); */
-    background-color: #eb7c44;
-    transition: background-color 0.3s ease-in;
-
-}
-
-
-.header-nav.scrolled .nav a , .header-nav.scrolled .user a{
-    color: rgb(0, 0, 0);
-    transition: color 0.4s ease;
-}
-
-.hidden-navbar {
-    display: none;
-    transition: all 0.1s ease-in-out;
 }
 
 .nav > li {
@@ -55,11 +33,10 @@ html {
 
 .nav li a {
     text-decoration: none;
-    text-align: center;
     padding: 0 24px;
     line-height: 46px;
     display: block;
-    color: #000000;
+    color: #fff;
     transition: background linear 0.25s, color linear 0.25s;
 }
 
@@ -72,13 +49,8 @@ html {
 
 .nav li:hover > a {
     color: #000;
-    background-color: #86868693;
-    font-display: initial;
-    transition: all 0.5s ease;
-    border-radius: 20px;
+    background-color: #ccc;
 }
-
-
 
 .nav li:hover .subuser{
     display: block;
@@ -99,16 +71,13 @@ html {
     padding: 0 24px;
     line-height: 46px;
     display: block;
-    color: #080808;
+    color: #fff;
     cursor: pointer;
 }
 
 .user a:hover {
     color: #000;
-    background-color: #86868693;
-    border-radius: 20px;
-    font-display: initial;
-    transition: all 0.5s ease;
+    background-color: #ccc;
 }
 
 .user img{
@@ -179,7 +148,7 @@ html {
 }
 
 .tour-section{
-    background-color: #000000;
+    background-color: #000;
 }
 
 .content-section h2 {
@@ -279,7 +248,7 @@ html {
 
 .ticket-heading {
     padding-top: 15px;
-    color: #000000;
+    color: #000;
     font-weight: 550;
 }
 
@@ -295,7 +264,7 @@ html {
     margin-top: 15px;
     padding: 8px 16px;
     display: inline-block;
-    background-color: #000000;
+    background-color: #000;
     color: #fff;
     text-decoration: none;
     border: none;
