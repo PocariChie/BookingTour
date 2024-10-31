@@ -8,7 +8,12 @@
     <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/mainstyle.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- new font for navbar -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,6 +36,13 @@
                     <div onclick="document.getElementById('js_login').style.display='none'">
                         <a onclick="toggleSignUp()" class="js-signup js-closelogin">SignUp</a>
                     </div>
+                    <!-- Account part -->
+                    <ul class="subuser">
+                        <!-- Uncomment your code in order to edit content -->
+                        <li><a class="js-signup">Sign Up</a></li>
+                        <li><a href="#user">Log Out</a></li>
+                    </ul>
+
                 </div>
             </div>
         
@@ -360,6 +372,7 @@
         </div>
     </div>
 <script src="indexmain.js"></script>
+
 </body>
 
 </html>
