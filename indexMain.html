@@ -21,6 +21,7 @@
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><button class="theme-toggle" id="theme-toggle">🌞</button></li>
                 </ul>
         
                 <div class="user">
@@ -359,66 +360,7 @@
         </div>
 
     </div>
-
-    <script>
-        // Function to handle when the LogIn button is clicked
-        function toggleLogIn() {
-            var login = document.getElementById('js_login');
-            var signup = document.getElementById('js_signup');
-
-            // Check and change display status
-            if (login.style.display === 'flex') {
-                login.style.display = 'none'; // Hide LogIn if it’s currently displayed
-            } else {
-                login.style.display = 'flex'; // Display LogIn
-                signup.style.display = 'none'; // Hide SignUp if it’s currently displayed
-            }
-        }
-
-        // Function to handle when the SignUp button is clicked
-        function toggleSignUp() {
-            var login = document.getElementById('js_login');
-            var signup = document.getElementById('js_signup');
-        const mainmodal = document.querySelector('.js-mainmodal')
-        
-        mainmodal.addEventListener('click', function(event){
-            event.stopPropagation()
-        })
-    </script>
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            toggleButton.textContent = body.classList.contains('dark-theme') ? '🌜' : '🌞';
-        });
-
-            // Check and change display status
-            if (signup.style.display === 'flex') {
-                signup.style.display = 'none'; // Hide SignUp if it’s currently displayed
-            } else {
-                signup.style.display = 'flex'; // Display SignUp
-                login.style.display = 'none'; // Hide LogIn if it’s currently displayed
-            }
-        }
-
-    </script>
-
-    <script>
-        function toggleMenu() {
-                const dropdownMenu = document.getElementById("dropdown-menu");
-                dropdownMenu.classList.toggle("show");
-            }
-
-            // Optional: Close the dropdown if a link inside it is clicked
-            document.querySelectorAll('#dropdown-menu a').forEach(link => {
-                link.addEventListener('click', () => {
-                    const dropdownMenu = document.getElementById("dropdown-menu");
-                    dropdownMenu.classList.remove("show");
-                });
-            });
-    </script>
+<script src="indexmain.js"></script>
 </body>
 
 </html>
