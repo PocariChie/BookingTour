@@ -344,7 +344,15 @@
         mainmodal.addEventListener('click', function(event){
             event.stopPropagation()
         })
-        
+    </script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            toggleButton.textContent = body.classList.contains('dark-theme') ? '🌜' : '🌞';
+        });
     </script>
 
 </body>
