@@ -15,3 +15,5 @@
 6.Open a Pull Request to merge your changes into the main project.
 
 
+Feel free to fork this project! We encourage collaboration and innovation, so don’t hesitate to make modifications or improvements. Whether you want to experiment with new features, fix bugs, or create something entirely different, your contributions are welcome. Let’s build something great together!
+
