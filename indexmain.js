@@ -58,3 +58,19 @@ toggleButton.addEventListener('click', () => {
                 headerNav.classList.remove('scrolled');
             }
         });
+//This script controls the dynamic behavior of the nav links underline styling.
+        //Get all nav links
+        const navLinks = document.querySelectorAll('.nav li a');
+
+        //Adding click event listener to each link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event){
+                //event.preventDefault();
+
+            //Removing 'active' class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            //Adding 'active' class only to the clicked link as being active
+            this.classList.add('active');
+            });
+        });
