@@ -17,16 +17,22 @@
             <!-- Main navigation with Home link always visible -->
             <div class="header-nav">
                 <ul class="nav">
-                    <li><a href="#">Home</a></li> <!-- Home link is outside the dropdown menu -->
+
+                    <li><a href="#" class="active">Home</a></li>
+
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><button class="theme-toggle" id="theme-toggle">🌞</button></li>
                 </ul>
-        
-                <div class="user">
-                    <div onclick="document.getElementById('js_confirm').style.display='none'">
-                        <a onclick="toggleLogIn()" class="js-login js-closesignup">LogIn</a>
+
+                <!-- New update 4/12 -->
+                <div class="user" >
+                    <div onclick="document.getElementById('js_confirm').style.display='none'" onclick="document.getElementById('js_signup').style.display='none'">
+                        <a onclick="document.getElementById('js_login').style.display='flex'" class="js-login js-closesignup">
+                            LogIn
+                        </a>
+
                     </div>
                     <div onclick="document.getElementById('js_login').style.display='none'">
                         <a onclick="toggleSignUp()" class="js-signup js-closelogin">SignUp</a>
@@ -56,6 +62,7 @@
                 <img src="./assets/img/Maroon-5.jpg" alt="Maroon5">
             </div>
         </div>
+
 
         <div class="content">
             <div id="band" class="content-section">
@@ -93,6 +100,7 @@
                 </div>
             </div>
         </div>
+
 
         <div id="tour" class="tour-section">
             <div class="content-section">
@@ -158,6 +166,7 @@
                     <p><i class="ti-location-pin"></i>Tokyo, Japan</p>
                     <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
                     <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
+                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
                 </div>
                 <div class="contact-form">
                     <form action="">
@@ -172,6 +181,7 @@
                         <div>
                             <div class="row">
                                 <input type="text" name="" id="" placeholder="Message" required class="form-control">
+                            </div>
                             </div>
                         </div>
                         <input class="btn" type="submit" value="SEND">
@@ -224,12 +234,14 @@
                 </label>
                 <input type="text" class="modal-inpul" placeholder="Enter email">
 
+
                 <div onclick="document.getElementById('js_ticket').style.display='none'">
                     <div onclick="document.getElementById('js_confirm').style.display='flex'" class="modal-pay-btn">
                         PAY
                         <i class="ti-check"></i>
                     </div>
                 </div>
+
 
 
             </div>
@@ -280,6 +292,7 @@
                 </header>
             </div>
 
+
             <div class="mcontent mrow">
                 <form action="">
                     <div class="mtext">
@@ -300,17 +313,18 @@
             </div>
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
-                <p onclick="document.getElementById('js_signup').style.display='none'" class="msignuptext ">Alredy have
-                    an account?
-                    <a style="color: #34a853;" onclick="document.getElementById('js_login').style.display='flex'"
-                        class="js-loginf js-hideSUF">
+                <p onclick="document.getElementById('js_signup').style.display='none'"
+                class="msignuptext ">Alredy have an account?
+                    <a style="color: #34a853;" onclick="document.getElementById('js_login').style.display='flex'" class="js-loginf js-hideSUF">
                         LogIn
                     </a>
                 </p>
             </div>
         </div>
 
+
     </div>
+
 
 
 
@@ -328,6 +342,7 @@
                     Welcome Back
                 </header>
             </div>
+
 
             <div class="mcontent mrow">
                 <form action="">
@@ -351,15 +366,14 @@
             </div>
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
-                <p onclick="document.getElementById('js_login').style.display='none'" class="mlogintext">Alredy have an
-                    account?
-                    <a style="color: #34a853;"
-                        onclick="document.getElementById('js_signup').style.display='flex'">SignUp</a>
-                </p>
+                <p onclick="document.getElementById('js_login').style.display='none'"
+                class="mlogintext">Alredy have an account?
+                <a style="color: #34a853;" onclick="document.getElementById('js_signup').style.display='flex'">SignUp</a></p>
             </div>
         </div>
     </div>
 <script src="indexmain.js"></script>
+
 </body>
 
 </html>
