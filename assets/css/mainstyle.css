@@ -24,7 +24,6 @@ html {
     top: 0;
     left: 0;
     right: 0;
-    /* làm cho thẻ chứa nó nổi lên hoặc chìm xuống */
     z-index: 1;
 }
 
@@ -38,6 +37,7 @@ html {
     line-height: 46px;
     display: block;
     color: #fff;
+    transition: background linear 0.25s, color linear 0.25s;
 }
 
 .subuser li a {
@@ -136,16 +136,13 @@ html {
     text-align: center;
     font-size: 15px;
     margin-top: 25px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
 }
 
 .about-content{
     margin-top: 25px;
     font-size: 15px;
-    /* text-align: justify; căn đều 2 bên */
     text-align: justify;
     line-height: 1.4;
 }
@@ -188,6 +185,19 @@ html {
     width: 90%;
     display: block;
     border-radius: 5px;
+}
+
+/* styling for icon color */
+.ti-youtube:hover, .ti-pinterest:hover {
+    color: rgb(255,55,55);
+}
+
+.ti-facebook:hover, .ti-twitter:hover {
+    color: rgb(55,85,255);
+}
+
+.ti-instagram:hover {
+    color: rgb(224, 172, 75);
 }
 
 .tickets {
@@ -245,9 +255,7 @@ html {
 .ticket-sub-heading {
     font-size: 15px;
     margin: 15px 0;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
 }
 
@@ -355,8 +363,10 @@ html {
 
 .social {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
+    width: 25%;
+    margin: auto;
 }
 
 .social > a {
@@ -585,9 +595,7 @@ html {
 .msignuptext {
     text-align: center;
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
@@ -630,9 +638,7 @@ html {
 .mlogintext {
     text-align: center;
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
     font-style: italic; 
-     /*opacity độ mờ  */
     opacity: 0.6;
     margin-bottom: 10px;
     cursor: pointer;
@@ -640,8 +646,6 @@ html {
 
 .mshowpasswordtext {
     font-size: 15px;
-    /* tạo kiểu cho chữ dùng font-style */
-     /*opacity độ mờ  */
     margin: 16px 0px 0px 0px;
 }
 
