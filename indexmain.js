@@ -47,3 +47,14 @@ toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
     toggleButton.textContent = body.classList.contains('dark-theme') ? '🌜' : '🌞';
 });
+//Add a js script with a function that changes the color of the nav-bar each time we find a new color
+
+        window.addEventListener('scroll' , function(){
+            const headerNav = document.querySelector('.header-nav');
+
+            if(window.scrollY > 0){
+                headerNav.classList.add('scrolled');
+            }else{
+                headerNav.classList.remove('scrolled');
+            }
+        });
