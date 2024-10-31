@@ -1,0 +1,158 @@
+
+.nav-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 46px;
+    width: 20%; /* Adjust width to be smaller */
+    max-width: 250px; /* Set a max-width for compactness */
+    z-index: 100;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a subtle effect */
+}
+
+.nav-dropdown li a {
+    padding: 8px 12px; /* Reduce padding for compactness */
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 16px; /* Adjust font size */
+}
+
+.nav-dropdown.show {
+    display: flex;
+}
+
+.ti-menu {
+    color: #fff;
+    font-size: 24px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+#dropdown-menu{
+    display: none;
+}
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .main {
+        padding-top: 56px; /* Thêm khoảng trống phía trên nội dung chính để tránh header che mất */
+    }
+    .header-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 16px;
+        background-color: #000;
+        position: fixed; /* Giữ cố định khi cuộn */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100; /* Đảm bảo header nằm trên các nội dung khác */
+    }
+    
+    .header-nav {
+        display: none;
+    }
+
+    .mobile-menu {  
+        display: block;
+        cursor: pointer;
+    }
+
+    #dropdown-menu {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 56px;
+        right: 16px;
+        background-color: #fff;
+        padding: 4px 0;
+        border-radius: 8px;
+        z-index: 2;
+        list-style: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    #dropdown-menu.show {
+        display: block; /* Show when 'show' class is added */
+    }
+
+    #dropdown-menu a {
+        color: #333;
+        padding: 10px 16px; /* Consistent padding */
+        text-decoration: none;
+        display: block;
+    }
+
+    #dropdown-menu a:last-child {
+        border-bottom: none; /* Remove border from the last item */
+    }
+
+    #dropdown-menu a:hover {
+        background-color: #f5f5f5; /* Light gray for hover */
+        color: #000;
+    }
+
+
+    .members {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .member {
+        width: 27%;
+        margin: 10px; 
+    }
+
+    .tickets {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .buy-ticket {
+        width: 45%; 
+        margin: 10px; 
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .contact-info {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .contact-form {
+        width: 100%; 
+    }
+
+    .contact-form .form-control {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    .col {
+        flex-direction: column; 
+        width: 100%;
+    }
+    
+    .row {
+        margin-left: 50px;
+        width: 80%; 
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+}

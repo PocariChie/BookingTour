@@ -685,3 +685,62 @@ html {
     position: absolute;
     left: 0;
 }
+/* Light mode variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg-color: #000;
+    --link-color: #fff;
+    --hover-bg-color: #ccc;
+    --hover-text-color: #000;
+}
+
+/* Dark mode variables */
+.dark-theme {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --header-bg-color: #444;
+    --link-color: #ffffff;
+    --hover-bg-color: #555;
+    --hover-text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header-nav {
+    background-color: var(--header-bg-color);
+}
+
+.nav li a,
+.user a,
+.ticket-information,
+.modal-title-confirm,
+.modal-title-signup,
+.modal-title-login {
+    color: var(--link-color);
+}
+
+.nav li:hover>a,
+.user a:hover,
+.btn:hover,
+.modal-close-btn:hover,
+.modal-pay-btn:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+
+.theme-toggle {
+    position: flex;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    padding: 10px;
+    background-color: var(--header-bg-color);
+    color: var(--link-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}

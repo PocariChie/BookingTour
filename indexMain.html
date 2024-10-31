@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maroon5</title>
-    <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon"/>
+    <link rel="icon" href="./assets/img/IconMaroon5.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/mainstyle.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- new font for navbar -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
     <div class="main">
-        <div  class="header">
+        <div class="header">
+            <!-- Main navigation with Home link always visible -->
             <div class="header-nav">
                 <ul class="nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Home</a></li> <!-- Home link is outside the dropdown menu -->
                     <li><a href="#band">Band</a></li>
                     <li><a href="#tour">Tour</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    
+                    <li><button class="theme-toggle" id="theme-toggle">🌞</button></li>
                 </ul>
-                <!-- New update 4/12 -->
-                <div class="user" >
-                    <div onclick="document.getElementById('js_confirm').style.display='none'" onclick="document.getElementById('js_signup').style.display='none'">
-                        <a onclick="document.getElementById('js_login').style.display='flex'" class="js-login js-closesignup">
-                            LogIn
-                        </a>
+        
+                <div class="user">
+                    <div onclick="document.getElementById('js_confirm').style.display='none'">
+                        <a onclick="toggleLogIn()" class="js-login js-closesignup">LogIn</a>
                     </div>
                     <div onclick="document.getElementById('js_login').style.display='none'">
-                        <a onclick="document.getElementById('js_signup').style.display='flex'" class="js-signup js-closelogin">
-                            SignUp
-                        </a>
-
+                        <a onclick="toggleSignUp()" class="js-signup js-closelogin">SignUp</a>
                     </div>
                     <!-- Account part -->
                     <ul class="subuser">
@@ -42,20 +42,45 @@
                         <li><a class="js-signup">Sign Up</a></li>
                         <li><a href="#user">Log Out</a></li>
                     </ul>
-                </div>
-                
-            </div>
 
+                </div>
+            </div>
+        
+            <!-- Mobile menu icon for dropdown toggle -->
+             <div class="header-mobile">
+                <div class="nav">
+                    <li><a href="#">Home</a></li>
+                </div>
+                <div id="mobile-menu" class="mobile-menu" onclick="toggleMenu()">
+                    <i class="ti-menu"></i>
+                </div>
+                <!-- Mobile dropdown menu for other links (excluding Home) -->
+                <ul id="dropdown-menu" class="nav-dropdown">
+                    <li><a href="#band">Band</a></li>
+                    <li><a href="#tour">Tour</a></li>
+                    <li><a href="#contact" style="border-bottom: 1px solid #e0e0e0;">Contact</a></li>
+                    <li><a onclick="toggleLogIn()" class="js-login">LogIn</a></li>
+                    <li><a onclick="toggleSignUp()" class="js-signup">SignUp</a></li>
+                </ul>
+             </div>
+            
             <div class="header-img">
                 <img src="./assets/img/Maroon-5.jpg" alt="Maroon5">
             </div>
         </div>
-        
+
         <div class="content">
             <div id="band" class="content-section">
                 <h2 class="section-heading">THE BAND</h2>
                 <p class="section-sub-heading">We love music</p>
-                <p class="about-content">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="about-content">We have created a fictional band website. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
                 <div class="members">
                     <div class="member">
                         <p class="member-name">AdamLevine</p>
@@ -66,7 +91,7 @@
                         <img src="./assets/img/James Valentine.jpg" alt="">
                     </div>
                     <div class="member">
-                        <p class="member-name">	JesseCarmichael</p>
+                        <p class="member-name"> JesseCarmichael</p>
                         <img src="./assets/img/Jesse Carmichael.jpg" alt="">
                     </div>
                     <div class="member">
@@ -80,7 +105,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="tour" class="tour-section">
             <div class="content-section">
                 <h2 class="section-heading text-white">TOUR DATES</h2>
@@ -95,7 +120,8 @@
                         <h3 class="ticket-heading">Hokaido</h3>
                         <p class="ticket-sub-heading">Fri 27 Nov 2016</p>
                         <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'"
+                            class="btn  js-buy-ticket">Buy Ticket</button>
                     </div>
                 </div>
 
@@ -105,7 +131,8 @@
                         <h3 class="ticket-heading">Tokyo</h3>
                         <p class="ticket-sub-heading">Sat 28 Nov 2016</p>
                         <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'"
+                            class="btn  js-buy-ticket">Buy Ticket</button>
                     </div>
                 </div>
 
@@ -115,7 +142,8 @@
                         <h3 class="ticket-heading">Okinawa</h3>
                         <p class="ticket-sub-heading">Sun 29 Nov 2016</p>
                         <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'"
+                            class="btn  js-buy-ticket">Buy Ticket</button>
                     </div>
                 </div>
 
@@ -125,7 +153,8 @@
                         <h3 class="ticket-heading">Hokaido</h3>
                         <p class="ticket-sub-heading">Fri 27 Nov 2016</p>
                         <p class="ticket-describe">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                        <button onclick="document.getElementById('js_ticket').style.display='flex'" class="btn  js-buy-ticket">Buy Ticket</button>
+                        <button onclick="document.getElementById('js_ticket').style.display='flex'"
+                            class="btn  js-buy-ticket">Buy Ticket</button>
                     </div>
                 </div>
 
@@ -140,7 +169,7 @@
                 <div class="contact-info">
                     <p><i class="ti-location-pin"></i>Tokyo, Japan</p>
                     <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
-                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p> 
+                    <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
                 </div>
                 <div class="contact-form">
                     <form action="">
@@ -155,7 +184,7 @@
                         <div>
                             <div class="row">
                                 <input type="text" name="" id="" placeholder="Message" required class="form-control">
-                            </div>  
+                            </div>
                         </div>
                         <input class="btn" type="submit" value="SEND">
                     </form>
@@ -169,11 +198,11 @@
 
         <div class="footer">
             <div class="social">
-                <a href="https://www.facebook.com/maroon5/"><i class="ti-facebook" ></i></a>
-                <a href="https://www.instagram.com/maroon5/?hl=en"><i class="ti-instagram" ></i></a>
-                <a href="https://www.youtube.com/channel/UCBVjMGOIkavEAhyqpxJ73Dw"><i class="ti-youtube" ></i></a>
-                <a href="https://www.pinterest.com/OfficialMaroon5/"><i class="ti-pinterest" ></i></a>
-                <a href="https://twitter.com/maroon5?lang=en"><i class="ti-twitter" ></i></a>
+                <a href="https://www.facebook.com/maroon5/"><i class="ti-facebook"></i></a>
+                <a href="https://www.instagram.com/maroon5/?hl=en"><i class="ti-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCBVjMGOIkavEAhyqpxJ73Dw"><i class="ti-youtube"></i></a>
+                <a href="https://www.pinterest.com/OfficialMaroon5/"><i class="ti-pinterest"></i></a>
+                <a href="https://twitter.com/maroon5?lang=en"><i class="ti-twitter"></i></a>
             </div>
             <p class="copyright">Powered by <a href="">Maroon5</a></p>
         </div>
@@ -184,7 +213,8 @@
     <div id="js_ticket" style="display:none" class="modal js-modal">
         <div class="modal-container js-modal-container">
             <div class="modal-header">
-                <div onclick="document.getElementById('js_ticket').style.display='none'" class="modal-close-btn js-modal-close">
+                <div onclick="document.getElementById('js_ticket').style.display='none'"
+                    class="modal-close-btn js-modal-close">
                     <i class="ti-close"></i>
                 </div>
                 <header class="modal-title">
@@ -205,14 +235,14 @@
                     Send To
                 </label>
                 <input type="text" class="modal-inpul" placeholder="Enter email">
-                
+
                 <div onclick="document.getElementById('js_ticket').style.display='none'">
                     <div onclick="document.getElementById('js_confirm').style.display='flex'" class="modal-pay-btn">
                         PAY
                         <i class="ti-check"></i>
                     </div>
                 </div>
-                
+
 
             </div>
 
@@ -240,7 +270,8 @@
 
             <div class="mcontent mrow">
                 <div onclick="document.getElementById('js_confirm').style.display='none'" class="mtext">
-                    <input onclick="document.getElementById('js_login').style.display='flex'" class="btn" type="submit" value="LOGIN">
+                    <input onclick="document.getElementById('js_login').style.display='flex'" class="btn" type="submit"
+                        value="LOGIN">
                 </div>
             </div>
         </div>
@@ -248,7 +279,8 @@
 
     <!-- SIGN UP -->
     <!-- New update 4/12 -->
-    <div id="js_signup" style="display:none" onclick="document.getElementById('js_signup').style.display='none'" class="modalsignup js-signup-modal">
+    <div id="js_signup" style="display:none" onclick="document.getElementById('js_signup').style.display='none'"
+        class="modalsignup js-signup-modal">
         <div class="main-modal-signup js-mainmodal">
             <div class="mheader mrow">
                 <div onclick="document.getElementById('js_signup').style.display='none'" class="mclosebtn js-mclose">
@@ -259,44 +291,48 @@
                     Join With Us
                 </header>
             </div>
-    
+
             <div class="mcontent mrow">
                 <form action="">
-                        <div class="mtext">
-                            <input type="text" placeholder="Input your username" name="username" class="form-control">
-                        </div>
-                        <div class="mtext">
-                            <input type="password" id="password" placeholder="Input your password" name="password" class="form-control">
-                        </div>
-                        <div class="mtext">
-                            <input type="password" id="re_password" placeholder="Re-enter your password" name="re-password" class="form-control">
-                        </div>
-                        <div class="mtext">
-                            <input class="btn " type="submit" value="SIGNUP">
-                        </div>
+                    <div class="mtext">
+                        <input type="text" placeholder="Input your username" name="username" class="form-control">
+                    </div>
+                    <div class="mtext">
+                        <input type="password" id="password" placeholder="Input your password" name="password"
+                            class="form-control">
+                    </div>
+                    <div class="mtext">
+                        <input type="password" id="re_password" placeholder="Re-enter your password" name="re-password"
+                            class="form-control">
+                    </div>
+                    <div class="mtext">
+                        <input class="btn " type="submit" value="SIGNUP">
+                    </div>
                 </form>
             </div>
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
-                <p onclick="document.getElementById('js_signup').style.display='none'"
-                class="msignuptext ">Alredy have an account? 
-                    <a style="color: #34a853;" onclick="document.getElementById('js_login').style.display='flex'" class="js-loginf js-hideSUF">
+                <p onclick="document.getElementById('js_signup').style.display='none'" class="msignuptext ">Alredy have
+                    an account?
+                    <a style="color: #34a853;" onclick="document.getElementById('js_login').style.display='flex'"
+                        class="js-loginf js-hideSUF">
                         LogIn
                     </a>
                 </p>
             </div>
         </div>
-        
+
     </div>
 
-    
+
 
     <!-- LOG IN -->
     <!-- New update 4/12 -->
-    <div id="js_login" style="display:none" onclick="document.getElementById('js_login').style.display='none'"  class="modallogin js-login-modal">
+    <div id="js_login" style="display:none" onclick="document.getElementById('js_login').style.display='none'"
+        class="modallogin js-login-modal">
         <div class="main-modal-login js-loginmodal">
             <div class="mheader mrow">
-                <div onclick="document.getElementById('js_login').style.display='none'"   class="mclosebtn js-loginclose">
+                <div onclick="document.getElementById('js_login').style.display='none'" class="mclosebtn js-loginclose">
                     <i class="ti-close"></i>
                 </div>
                 <center><img src="./assets/img/IconMaroon5.jpg" alt="Icon"></center>
@@ -304,66 +340,39 @@
                     Welcome Back
                 </header>
             </div>
-    
+
             <div class="mcontent mrow">
                 <form action="">
-                        <div class="mtext">
-                            <input type="text" placeholder="Input your username" name="username" class="form-control">
-                        </div>
-                        <div class="mtext">
-                            <input type="password" id="password" placeholder="Input your password" name="password" class="form-control">
-                        </div>
-                        <div class="mtext mcheckbox">
-                            <input type="checkbox"  onclick="ShowPassword()" class="form-control">
-                        </div>
-                        <div class="mtext">
-                            <p class="mshowpasswordtext">Show password</p>
-                        </div>
-                        <div class="mtext">
-                            <input class="btn" type="submit" value="Login">
-                        </div>
+                    <div class="mtext">
+                        <input type="text" placeholder="Input your username" name="username" class="form-control">
+                    </div>
+                    <div class="mtext">
+                        <input type="password" id="password" placeholder="Input your password" name="password"
+                            class="form-control">
+                    </div>
+                    <div class="mtext mcheckbox">
+                        <input type="checkbox" onclick="ShowPassword()" class="form-control">
+                    </div>
+                    <div class="mtext">
+                        <p class="mshowpasswordtext">Show password</p>
+                    </div>
+                    <div class="mtext">
+                        <input class="btn" type="submit" value="Login">
+                    </div>
                 </form>
             </div>
             <!-- New update 4/12 -->
             <div class="mfooter mtext">
-                <p onclick="document.getElementById('js_login').style.display='none'"
-                class="mlogintext">Alredy have an account? 
-                <a style="color: #34a853;" onclick="document.getElementById('js_signup').style.display='flex'">SignUp</a></p>
+                <p onclick="document.getElementById('js_login').style.display='none'" class="mlogintext">Alredy have an
+                    account?
+                    <a style="color: #34a853;"
+                        onclick="document.getElementById('js_signup').style.display='flex'">SignUp</a>
+                </p>
             </div>
         </div>
-        
     </div>
-
-    <script>
-        const loginmodal = document.querySelector('.js-loginmodal')
-
-        loginmodal.addEventListener('click', function(event){
-            event.stopPropagation()
-        })
-    </script>
-
-
-    <script>
-        const mainmodal = document.querySelector('.js-mainmodal')
-        
-        mainmodal.addEventListener('click', function(event){
-            event.stopPropagation()
-        })
-        
-    </script>
-
-<!-- Add a js script with a function that changes the color of the nav-bar each time we find a new color -->
-    <script>
-        window.addEventListener('scroll' , function(){
-            const headerNav = document.querySelector('.header-nav');
-
-            if(window.scrollY > 0){
-                headerNav.classList.add('scrolled');
-            }else{
-                headerNav.classList.remove('scrolled');
-            }
-        });
-    </script>
+<script src="indexmain.js"></script>
 
 </body>
+
 </html>
