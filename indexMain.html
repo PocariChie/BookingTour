@@ -380,6 +380,23 @@
             var login = document.getElementById('js_login');
             var signup = document.getElementById('js_signup');
 
+
+    <script>
+        const mainmodal = document.querySelector('.js-mainmodal')
+        
+        mainmodal.addEventListener('click', function(event){
+            event.stopPropagation()
+        })
+    </script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            toggleButton.textContent = body.classList.contains('dark-theme') ? '🌜' : '🌞';
+        });
+
             // Check and change display status
             if (signup.style.display === 'flex') {
                 signup.style.display = 'none'; // Hide SignUp if it’s currently displayed
@@ -388,6 +405,7 @@
                 login.style.display = 'none'; // Hide LogIn if it’s currently displayed
             }
         }
+
     </script>
 
     <script>
