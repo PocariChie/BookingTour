@@ -349,12 +349,7 @@ html {
     margin-top: 42px;
 }
 
-
-.footer{
-    padding: 64px 16px;
-    text-align: center;
-}
-
+/*
 .footer .social {
     font-size: 20px;
 }
@@ -392,6 +387,105 @@ html {
 
 .social > a:hover {
     transform: scale(1.2);
+}
+
+*/
+.footer {
+    padding: 64px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid__row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.grid__col-4 {
+    
+}
+
+.assistance__header {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.assistance__list {
+    list-style: none;
+    margin-left: 5px;
+}
+
+.assistance__item {
+    margin: 15px auto;
+}
+
+.assistance__item a {
+    display: flex;
+    text-decoration: none;
+}
+
+.assistance__icon {
+    font-size: 25px;
+    color: var(--text-color);
+    margin-right: 20px;
+}
+
+.assistance__item--content {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.assistance__link--facebook:hover {
+    color: rgb(55, 85, 255);
+    font-weight: 700;
+}
+
+.assistance__link--instagram:hover {
+    color: rgb(224, 172, 75);
+    font-weight: 700;
+}
+
+.assistance__link--youtube:hover {
+    color: rgb(255, 55, 55);
+    font-weight: 700;
+}
+
+.assistance__link--pinterest:hover {
+    color: rgb(255, 55, 55);
+    font-weight: 700;
+}
+
+.assistance__link--twitter:hover {
+    color: rgb(55, 85, 255);
+    font-weight: 700;
+}
+
+.assistance__link {
+    color: var(--text-color);
+}
+
+.assistance__link--content {
+    font-size: 20px;
+}
+
+.assistance__link--content:hover {
+    color: #333333;
+    font-weight: 700;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 20px;
+}
+
+.copyright a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright a:hover {
+    color: rgb(55, 85, 255);
+    font-weight: 700;
 }
 
 /* BUY TICKET */
